@@ -1,0 +1,23 @@
+<div><button type="submit"  (click)="print()">Submit</button>
+  <div >
+    <input type="text" style="display: inline-block; " (keyup)="fileName($event)" placeholder="File Name" >
+    <br>
+
+      <button (click)="exportData()">Export</button>
+  <div>
+<table id="exportable">
+  <tr>
+    <th *ngFor="let col of columns">
+      {{col}}
+    </th>
+  </tr>
+  <tr *ngFor="let char of characters | async">
+    <td *ngFor="let col of columns">
+      {{char[col]}}
+    </td>
+  </tr>
+
+</table>
+</div>
+</div>
+</div>
